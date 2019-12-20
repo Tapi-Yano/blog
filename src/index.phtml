@@ -1,0 +1,23 @@
+<h2>Accueil</h2>
+
+	<?php foreach ($articles as $article): ?> 
+	<div class="article_acceuil">
+		<h3>
+			<a href="show_post.php?Id=<?=intval($article['Id'])?>" title="Consulter l'article"><?= htmlspecialchars($article['Title']) ?></a>
+		</h3>
+		<div class="contenu_acceuil">
+			<p><?= substr(htmlspecialchars($article['Contents']),0 ,100).'...' ?></p>
+			<p>Rédigé par <?= htmlspecialchars($article['FirstName']) ?> <?= htmlspecialchars($article['LastName']) ?></p>
+			<q> le <?= htmlspecialchars($article['date_article']) ?></q>
+		</div>
+	</div>
+	<?php endforeach ?>
+
+
+
+
+
+
+
+
+

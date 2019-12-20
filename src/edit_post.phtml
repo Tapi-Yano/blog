@@ -1,0 +1,25 @@
+<div class="edit_post">
+	<h1 class="titre_edit_post"><i class="fas fa-pencil"></i>Modifier un article</h1>
+		<form action="edit_post.php" method="POST">
+		<caption class="edit_post_color"><i class="far fa-sticky-note-o"></i>Article à Modifier</caption>
+			<fieldset>
+			<ul class="ul">
+				<li>
+					<!--<legend class="edit_post_color"><i class="far fa-sticky-note-o"></i>Article à Modifier</legend>-->
+					<input type="hidden" name="postId" value="<?= intval($articles['Id']) ?>">
+				</li>
+				<li>
+					<label class="edit_post_color" for="titre">Titre:</label></p>
+					<input type="text" name="titre" for="titre" value="<?= htmlspecialchars($articles['Title']) ?>">
+				</li>
+				<li>
+						<label class="edit_post_color" for="article">Article:</label></p>
+						<textarea class="textarea_post" type="text" name="article" for="article"><?= htmlspecialchars($articles['Contents']) ?></textarea>
+				</li>
+				<li class="boutton">
+					<button class="firstbutton" type="submit" value="Enregister">Enregister</button>
+					<button class="buttoneffacer" type="reset" value="Annuler"><a class="retour_admin" href="admin.php">Annuler</a></button>
+				</li>
+			</fieldset>
+		</form>
+</div>

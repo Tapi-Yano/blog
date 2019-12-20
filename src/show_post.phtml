@@ -1,0 +1,39 @@
+<h1 class="titreArticle"><i class="fab fa-stack-exchange"></i> Article</h1>
+	<article class="article">
+		<h2><?= htmlspecialchars($article['Title']) ?></h2>
+			<p><?= htmlspecialchars($article['Contents']) ?></p>
+			<q>Rédigé par <?= htmlspecialchars($article['FirstName']) ?> <?= htmlspecialchars($article['LastName']) ?> le <?= $article['CreationTimestamp'] ?></q>
+	</article>
+	<article class="commentaires">
+		<h2>Commentaires...</h2>
+		<?php foreach ($comments as $com): ?>
+			<section>
+				<h3><i class="fas fa-edit"></i> Rédigé par <?= htmlspecialchars($com['NickName']) ?></h3>
+					<p><?= htmlspecialchars($com['com']) ?></p>
+					<q>le <?= $com['date_comment'] ?></q>
+			</section>
+			<hr>
+		<?php endforeach ?>
+	</article>
+	<div class="add_comment">
+		<form class="show_post" action="add_comment.php" method="POST">
+			<input type="hidden" name="PostId" value="<?= intval($_GET['Id']) ?>">
+		<fieldset>
+			<legend><i class="fas fa-comment"></i> Nouveau commentaire</legend>
+			<ul class="ul">
+				<li>
+					<label for="NickName">Pseudo :</label><br>
+					<input name="NickName" type="text" id="Pseudo" placeholder="Entrez votre pseudo" />
+				</li>
+				<li>
+					<label class="textarea" for="contents">Commentaire :</label><br>
+					<textarea id="contents" name="contents" rows="15"  placeholder="Commentaires..."></textarea>
+				</li>
+				<li class="boutton">
+					<button class="firstbutton" type="submit">Enregistrer</button>
+					<a class="buttoneffacer" href="index.php">Annuler</a>
+				</li>
+			</ul>
+		</fieldset>
+		</form>
+	</div>

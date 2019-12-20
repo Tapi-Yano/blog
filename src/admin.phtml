@@ -1,0 +1,26 @@
+<div class="admin">
+	<h3 class="adminBlog"><a href="add_post.php">Rédiger un nouvel article <i class="fas fa-pen-alt fa-1.5x"></i></a></h3>
+		<table class="table table-bordered">
+			<caption>Liste des articles à modifier ou supprimer</caption>
+			<thead class="admin_thead">
+				<th scope="col">Titre</th>
+				<th scope="col">Article</th>
+				<th scope="col">Auteur</th>
+				<th scope="col">Catégorie</th>
+				<th scope="col">Modifier</th>
+				<th scope="col">Supprimer</th>
+			</thead>
+			<tbody>
+				<?php foreach ($articles as  $article): ?>
+				<tr>
+					<td><?= htmlspecialchars($article['Title']) ?></td>
+					<td><?= htmlspecialchars($article['Contents']) ?></td>
+					<td><?= htmlspecialchars($article['FirstName']) ?> <?= htmlspecialchars($article['LastName']) ?></td>
+					<td><?= htmlspecialchars($article['Name']) ?></td>
+					<td><a href="edit_post.php?id=<?=intval($article['Id'])?>"><i class="fas fa-pencil-alt fa-2x"></i></a></td>
+					<td><a href="delete_post.php?id=<?=intval($article['Id'])?>"><i class="fas fa-trash-alt fa-2x"></i></a></td>
+				</tr>
+				<?php endforeach ?>
+			</tbody>
+		</table>
+</div>

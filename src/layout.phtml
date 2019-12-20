@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+	<title>BLOG</title>
+	<link rel="stylesheet" type="text/css" href="css/blog.css">
+</head>
+<body>
+	<?php if(isset($_SESSION['connexion'])): ?>
+		<!-- Interface utilisateur -->
+		<h2>Bonjour <?= $_SESSION['pseudo'] ?></h2>
+	<?php endif ?>
+	<header class="blog-header">
+			<h1>
+				<a href="index.php"><i class="fas fa-microphone fa-2x"></i> Encore un Blog ?! #Trop Cool Tapi</a>
+			</h1>
+			<nav>
+				<a href="index.php"><i class="fas fa-home"></i> Accueil</a>
+				<a href="news_membres.php"><i class="fas fa-users"></i> Nouveau membres</a>
+				<a href="connexion_membres.php"><i class="fas fa-users"></i> Se connecter</a>
+				<a href="admin.php"><i class="fas fa-cogs"></i> Administration</a>
+			</nav>
+		
+	</header>
+	<main id="main">
+		<?php include $template.'.phtml' ?>
+	</main>
+		<footer>
+			<nav>
+				<ul class="footer_nav">
+					<li><a href="#"><i class="fab fa-facebook-square"></i> Facebook</a></li>
+					<li><a href="#"><i class="fab fa-twitter-square"></i> Twitter</a></li>
+					<li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+				</ul>
+			</nav>
+			<p>By Yann</p>
+			<img class="img_footer" src="img/photo_profil.jpg" alt="photo auteur">
+		</footer>
+	</body>
+</html>
